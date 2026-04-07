@@ -1,5 +1,4 @@
 // src/components/layout/Navbar.jsx
-import logo from '../../assets/images/DEYAL MAIN lOGO PNG.png'
 import React, { useState, useEffect } from 'react';
 
 const Navbar = ({ page, setPage, cartCount, onCartClick }) => {
@@ -37,7 +36,7 @@ const Navbar = ({ page, setPage, cartCount, onCartClick }) => {
           >
             
             <div>
-              <img src={logo} alt="Deyal Food Logo" className='w-40 h-30  object-cover'/>
+              <img src="DEYAL MAIN lOGO PNG.png" alt="Deyal Food Logo" className='w-40 h-30  object-cover'/>
             </div>
           </button>
 

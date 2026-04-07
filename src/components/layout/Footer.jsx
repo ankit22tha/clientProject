@@ -1,7 +1,5 @@
 // src/components/layout/Footer.jsx
 import React from 'react';
-import logo from '../../assets/images/DEYAL MAIN lOGO PNG.png';
-
 const Footer = ({ setPage }) => {
   return (
     <footer className="bg-espresso-900 text-ivory-100/70 py-16 mt-20">
@@ -12,7 +10,7 @@ const Footer = ({ setPage }) => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src={logo} 
+                src="DEYAL MAIN lOGO PNG.png"
                 alt="Deyal Food Logo" 
                 className="w-40 h-auto object-contain" 
               />

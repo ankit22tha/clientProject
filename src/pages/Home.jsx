@@ -1,5 +1,4 @@
 // src/pages/Home.jsx
-import heroPic from '../assets/images/dada.png';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ui/ProductCard';
 import { PRODUCTS } from '../data/products';
@@ -64,7 +63,7 @@ const Home = ({ setPage, addToCart }) => {
       <div className="relative max-w-md lg:max-w-lg">
         <div className="rounded-3xl overflow-hidden">
           <img 
-            src={heroPic} 
+            src="dada.png" 
             alt="Deyal Masale" 
             className="w-47 h-49 object-cover rounded-6xl"
           />
