@@ -36,7 +36,7 @@ const Navbar = ({ page, setPage, cartCount, onCartClick }) => {
           >
             
             <div>
-              <img src="DEYAL MAIN lOGO PNG.png" alt="Deyal Food Logo" className='w-40 h-30  object-cover'/>
+              <img src="DEYAL MAIN LOGO PNG.png" alt="Deyal Food Logo" className='w-40 h-30  object-cover'/>
             </div>
           </button>
 

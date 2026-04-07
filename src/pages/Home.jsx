@@ -32,7 +32,7 @@ const Home = ({ setPage, addToCart }) => {
     <div className="space-y-10 lg:pr-8">
       
       <h1 className="font-display text-6xl lg:text-7xl font-light text-white leading-none">
-        हर खाने में भरपूर स्वाद<br />
+        <span className="font-bold">हर खाने में भरपूर स्वाद</span><br/>
         <span className="text-amber-400">Deyal Masale</span>
       </h1>
 
@@ -42,18 +42,18 @@ const Home = ({ setPage, addToCart }) => {
 
       <button 
         onClick={() => setPage('products')}
-        className="px-10 py-4 bg-gradient-to-r from-crimson-700 to-amber-500 text-white font-semibold rounded-full hover:scale-105 transition-all text-lg"
+        className="px-4 py-2 bg-gradient-to-r from-crimson-700 to-amber-500 text-white font-semibold rounded-full hover:scale-105 transition-all text-lg"
       >
         More Products →
       </button>
 
       {/* QR Code - Text ke niche, thoda right shifted */}
-      <div className="pt-6 pl-10">
+      <div className="pt-2 py-5">
         <p className="text-amber-300 text-sm mb-3">Scan to know more about us</p>
         <img 
           src="qrCode.jpeg"   // ← Yahan apni QR code image ka path daal do
           alt="QR Code" 
-          className="w-36 h-36 border-4 border-white/30 rounded-2xl shadow-lg"
+          className="w-45 h-40 border-4 border-white/30 rounded-2xl shadow-lg"
         />
       </div>
     </div>
@@ -65,7 +65,7 @@ const Home = ({ setPage, addToCart }) => {
           <img 
             src="dada.png" 
             alt="Deyal Masale" 
-            className="w-47 h-49 object-cover rounded-6xl"
+            className="w-full h-auto object-cover rounded-6xl"
           />
         </div>
         
@@ -113,7 +113,10 @@ const Home = ({ setPage, addToCart }) => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PRODUCTS.slice(0, 4).map((product) => (
-              <ProductCard key={product.id} product={product} addToCart={addToCart} />
+              <ProductCard 
+              key={product.id} 
+              product={product} 
+              addToCart={addToCart} />
             ))}
           </div>
         </div>

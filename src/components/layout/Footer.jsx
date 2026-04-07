@@ -10,7 +10,7 @@ const Footer = ({ setPage }) => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="DEYAL MAIN lOGO PNG.png"
+                src="DEYAL MAIN LOGO PNG.png"
                 alt="Deyal Food Logo" 
                 className="w-40 h-auto object-contain" 
               />
