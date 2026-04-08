@@ -7,9 +7,17 @@ const ProductCard = ({ product, addToCart }) => {
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg card-lift hover:shadow-2xl transition-all group">
       {/* Image Area */}
       <div className={`h-56 bg-gradient-to-br ${product.color || 'from-amber-100 to-orange-100'} flex items-center justify-center relative overflow-hidden`}>
-        <span className="text-8xl transition-transform duration-500 group-hover:scale-110">
-          {product.emoji}
-        </span>
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-40 h-40 object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-lg"
+        />
+        
+        {product.badge && (
+          <span className="absolute top-4 left-4 px-4 py-1 bg-crimson-700 text-white text-xs font-semibold rounded-full">
+            {product.badge}
+          </span>
+        )}
         
         {product.badge && (
           <span className="absolute top-4 left-4 px-4 py-1 bg-crimson-700 text-white text-xs font-semibold rounded-full">

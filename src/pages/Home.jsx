@@ -96,7 +96,14 @@ const Home = ({ setPage, addToCart }) => {
               onClick={() => setPage('products')}
               className="bg-white rounded-3xl p-10 text-center card-lift cursor-pointer hover:shadow-xl transition-all group"
             >
-              <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{cat.icon}</div>
+              <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
+                <img 
+                  src={cat.icon} 
+                  alt={cat.label} 
+                  className="w-100 h-100 object-contain group-hover:scale-110 transition-transform" 
+                />
+              </div>
+              
               <h3 className="font-display text-2xl text-espresso-700 mb-3">{cat.label}</h3>
               <p className="text-espresso-500 text-sm mb-6">{cat.desc}</p>
               <p className="text-amber-600 font-medium">{cat.count} Products →</p>

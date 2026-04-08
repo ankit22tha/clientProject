@@ -2,27 +2,30 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
-import About from './pages/About';//our story
+import About from './pages/About';
 import Products from './pages/Products';
 import Media from './pages/Media';
-import Contact from './pages/Contact';//contact
+import Contact from './pages/Contact';
 import Footer from './components/layout/Footer';
 
 function App() {
   const [page, setPage] = useState('home');
   const [cart, setCart] = useState([]);
-  const [loading, setLoading] = useState(true);   // ← Loader ke liye state
-  const [showCart, setShowCart] =useState(false); //Cart ke liye 
+  const [loading, setLoading] = useState(true);
+  const [showCart, setShowCart] = useState(false);
 
-
-  // Loader ko 1.5 second ke baad hide karna
+  // Loader
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1500);
-
     return () => clearTimeout(timer);
   }, []);
+
+  // Har page change pe scroll top pe le aao
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
 
   const addToCart = (product) => {
     setCart([...cart, product]);
@@ -39,7 +42,7 @@ function App() {
     setCart(newCart);
   };
 
-  const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+  const totalPrice = cart.reduce((sum, item) => sum + (item.price || 0), 0);
 
   if (loading) {
     return (
@@ -59,26 +62,24 @@ function App() {
         cartCount={cart.length}
         onCartClick={() => setShowCart(true)}
       />
-      
-          <div className="bg-gradient-to-br from-espresso-900 via-crimson-900 to-amber-900 pb-15 pt-15">
 
-            <main>
-              {page === 'home' && <Home setPage={setPage} addToCart={addToCart} />}
-              {page === 'about' && <About setPage={setPage} addToCart={addToCart}/>}
-              {page === 'products' && <Products setPage={setPage} addToCart={addToCart} />}
-              {page === 'media' && <Media />}
-              {page === 'contact' && <Contact/>}
-            </main>
-          </div>
+      {/* Dark Gradient Background - Har page ke liye */}
+      <div className="bg-gradient-to-br from-espresso-900 via-crimson-900 to-amber-900 pb-10">
+        <main>
+          {page === 'home' && <Home setPage={setPage} addToCart={addToCart} />}
+          {page === 'about' && <About />}
+          {page === 'products' && <Products setPage={setPage} addToCart={addToCart} />}
+          {page === 'media' && <Media />}
+          {page === 'contact' && <Contact />}
+        </main>
+      </div>
 
       <Footer setPage={setPage} />
 
-            {/* ================== REAL CART MODAL ================== */}
+      {/* Cart Modal */}
       {showCart && (
         <div className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-hidden shadow-2xl">
-            
-            {/* Header */}
             <div className="p-6 border-b flex justify-between items-center bg-espresso-900 text-white">
               <h2 className="text-2xl font-display">Your Cart ({cart.length})</h2>
               <button 
@@ -89,7 +90,6 @@ function App() {
               </button>
             </div>
 
-            {/* Cart Items */}
             <div className="p-6 overflow-y-auto max-h-[55vh]">
               {cart.length === 0 ? (
                 <div className="text-center py-16">
@@ -117,7 +117,6 @@ function App() {
               )}
             </div>
 
-            {/* Total & Checkout */}
             {cart.length > 0 && (
               <div className="p-6 border-t bg-gray-50">
                 <div className="flex justify-between items-center text-xl font-semibold mb-6">
@@ -132,8 +131,6 @@ function App() {
           </div>
         </div>
       )}
-      
-
     </div>
   );
 }
