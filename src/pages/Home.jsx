@@ -29,7 +29,7 @@ const Home = ({ setPage, addToCart }) => {
     <div className="max-w-5xl mx-auto px-4 grid lg:grid-cols-2 gap-20 lg:gap-17 items-center pt-20">
     
     {/* LEFT - Text Side */}
-    <div className="space-y-10 lg:pr-8 animate-fade-in">
+    <div className="space-y-10 lg:pr-8">
       
       <h1 className="font-display text-6xl lg:text-7xl font-light text-white leading-none">
         <span className="font-bold">हर खाने में भरपूर स्वाद</span><br/>
@@ -60,7 +60,7 @@ const Home = ({ setPage, addToCart }) => {
 
     {/* RIGHT - Image Side (Chhota kiya) */}
     <div className="flex justify-center lg:justify-end">
-      <div className="relative max-w-md lg:max-w-lg animate-float">
+      <div className="relative max-w-md lg:max-w-lg">
         <div className="rounded-3xl overflow-hidden">
           <img 
             src="dada.png" 
