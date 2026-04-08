@@ -95,7 +95,6 @@ const Home = ({ setPage, addToCart }) => {
               key={cat.key}
               onClick={() => setPage('products')}
               className="bg-white rounded-3xl p-10 text-center card-lift cursor-pointer hover:shadow-xl transition-all group"
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{cat.icon}</div>
               <h3 className="font-display text-2xl text-espresso-700 mb-3">{cat.label}</h3>
