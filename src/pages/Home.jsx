@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ui/ProductCard';
 import { PRODUCTS } from '../data/products';
-import { CATEGORIES } from '../data/categories';
+import { CATEGORIES } from '../data/Categories';
 import { MARQUEE } from '../data/marquee';
 
 const Home = ({ setPage, addToCart }) => {
