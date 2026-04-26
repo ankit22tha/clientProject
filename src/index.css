@@ -46,7 +46,7 @@ body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-}
+}   
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
@@ -215,4 +215,21 @@ body {
   resize: vertical;
   min-height: 120px;
   padding-top: 22px;
+}
+
+@keyframes wave1 {
+  0%, 100% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(-30px) scaleY(1.1); }
+}
+@keyframes wave2 {
+  0%, 100% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(30px) scaleY(0.9); }
+}
+@keyframes wave3 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+}
+@keyframes scrollStrip {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
